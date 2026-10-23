@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Power Bag | Carry the Future</title>
+  <meta name="description" content="Spoznaj Power Bag – inovativno torbo z vgrajenim dežnikom in brezžičnim polnjenjem. Več udobja, manj skrbi.">
+  <meta name="keywords" content="Power Bag, pametna torba, vgrajen dežnik, brezžično polnjenje, inovativni izdelki">
+  <meta name="theme-color" content="#eae3d7">
+
+  <style>
+    :root {
+      --cream: #f4f0e8;
+      --beige: #e4d8c6;
+      --gold: #b99a62;
+      --dark: #292925;
+      --gray: #77766f;
+      --white: #fffdf9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 8%;
+      border-bottom: 1px solid #d9d0c2;
+      background: rgba(244,240,232,.94);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 23px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: 600px;
+      padding: 85px 8%;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 45px;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      color: #987a45;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.05;
+      font-weight: 400;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    h1 em { color: var(--gold); }
+
+    .hero p {
+      max-width: 470px;
+      color: var(--gray);
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--dark);
+      color: white;
+      padding: 15px 25px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      border: 1px solid var(--dark);
+      transition: .25s;
+    }
+
+    .button:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--dark);
+      margin-left: 10px;
+    }
+
+    .visual {
+      min-height: 410px;
+      background: linear-gradient(145deg, #e9dfd0, #d5c4ab);
+      border-radius: 48% 48% 5px 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 50%;
+    }
+
+    .bag {
+      position: relative;
+      width: 210px;
+      height: 250px;
+      border-radius: 28px 28px 17px 17px;
+      background: linear-gradient(120deg, #77766e, #44443f);
+      box-shadow: 20px 30px 35px #8b7b6644;
+      z-index: 1;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .bag::before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 65px;
+      border: 12px solid #55554e;
+      border-bottom: 0;
+      border-radius: 55px 55px 0 0;
+      top: -55px;
+      left: 48px;
+    }
+
+    .bag::after {
+      content: "POWER BAG";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 105px;
+      text-align: center;
+      color: #d6bb83;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .bag-pocket {
+      position: absolute;
+      height: 62px;
+      left: 17px;
+      right: 17px;
+      bottom: 15px;
+      border: 1px solid #ffffff30;
+      border-radius: 8px;
+    }
+
+    .orbit {
+      position: absolute;
+      z-index: 2;
+      background: var(--white);
+      padding: 12px 15px;
+      border-radius: 5px;
+      box-shadow: 0 8px 25px #5a4b3720;
+      font-size: 12px;
+    }
+
+    .orbit-one { top: 70px; left: 5%; }
+    .orbit-two { right: 4%; bottom: 75px; }
+
+    .section {
+      padding: 90px 8%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 45px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(34px, 4vw, 49px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p { color: var(--gray); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: var(--white);
+      padding: 32px 27px;
+      border: 1px solid #e4dccf;
+      transition: .25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+
+    .feature-icon { font-size: 30px; margin-bottom: 20px; }
+
+    .feature h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .feature p { color: var(--gray); font-size: 14px; }
+
+    .story {
+      background: #ded3c2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .story-art {
+      min-height: 320px;
+      background: linear-gradient(135deg, #c8b697, #eee6da);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+    }
+
+    .story p { color: #646158; margin: 18px 0 25px; }
+
+    .contact {
+      text-align: center;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .contact p {
+      color: #c8c4bb;
+      max-width: 540px;
+      margin: 0 auto 25px;
+    }
+
+    .contact .button {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #201f1a;
+    }
+
+    footer {
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 760px) {
+      .nav { padding: 18px 5%; }
+      .nav-links { gap: 12px; font-size: 11px; }
+      .logo { font-size: 18px; }
+      .hero { grid-template-columns: 1fr; padding: 65px 6%; }
+      .visual { min-height: 360px; }
+      .features { grid-template-columns: 1fr; }
+      .story { grid-template-columns: 1fr; gap: 25px; }
+      .section { padding: 65px 6%; }
+      .button { padding: 13px 16px; }
+      .button-outline { margin-left: 5px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <a href="#home" class="logo">POWER<span>.</span>BAG</a>
+    <nav class="nav-links" aria-label="Glavna navigacija">
+      <a href="#features">Lastnosti</a>
+      <a href="#about">Naša ideja</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">Pametnejši vsakdan</div>
+        <h1>Carry less.<br>Experience <em>more.</em></h1>
+        <p>
+          Spoznaj Power Bag – sodobno idejo, ki združuje praktičnost,
+          tehnologijo in brezčasen dizajn v eni torbi.
+        </p>
+        <a class="button" href="#features">ODKRIJ POWER BAG ↗</a>
+        <a class="button button-outline" href="#about">NAŠA IDEJA</a>
+      </div>
+
+      <div class="visual" role="img" aria-label="Stilizirana ilustracija torbe Power Bag">
+        <div class="orbit orbit-one">☂ Vgrajen dežnik</div>
+        <div class="bag"><div class="bag-pocket"></div></div>
+        <div class="orbit orbit-two">ϟ Wireless charging</div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-heading reveal">
+        <div class="eyebrow">Ena torba. Več možnosti.</div>
+        <h2>Designed for real life.</h2>
+        <p>Manj skrbi, več svobode. Tri ideje, ki Power Bag ločijo od običajne torbe.</p>
+      </div>
+
+      <div class="features">
+        <article class="feature reveal">
+          <div class="feature-icon">☂</div>
+          <h3>Dežnik, vedno pri roki.</h3>
+          <p>V torbo je zasnovan prostor za vgrajen dežnik, da te nepričakovana ploha ne ujame nepripravljenega.</p>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-icon">ϟ</div>
+          <h3>Ostani povezan.</h3>
+          <p>Predvidena funkcija brezžičnega polnjenja omogoča priročnejše polnjenje združljivega telefona na poti.</p>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-icon">◇</div>
+          <h3>Preprost slog.</h3>
+          <p>Minimalistična zasnova, nevtralni odtenki in premišljena organizacija za šolo, mesto in vsakdan.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story" id="about">
+      <div class="story-art reveal" aria-hidden="true">✧</div>
+      <div class="reveal">
+        <div class="eyebrow">Zamisel za prihodnost</div>
+        <h2>Več kot samo torba.</h2>
+        <p>
+          Power Bag je šolski podjetniški projekt, ki raziskuje,
+          kako lahko združimo vsakodnevno uporabnost in sodobno tehnologijo.
+          Naš cilj je zamisel o torbi, ki pomaga poenostaviti vsakdan
+          in poskrbi za boljšo uporabniško izkušnjo.
+        </p>
+        <a class="button" href="#contact">STOPI V STIK ↗</a>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="eyebrow">Power Bag</div>
+      <h2>Ideas move us forward.</h2>
+      <p>Želiš izvedeti več o našem šolskem projektu? Piši nam in spoznaj našo idejo.</p>
+      <a class="button" href="mailto:powerbag22@gmail.com">POŠLJI E-POŠTO ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#home">POWER<span>.</span>BAG</a>
+    <span>charge. protect. go fruther.</span>
+    <span>© <span id="year"></span> Power Bag · Šolski projekt</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const items = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach((item) => observer.observe(item));
+    } else {
+      items.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
